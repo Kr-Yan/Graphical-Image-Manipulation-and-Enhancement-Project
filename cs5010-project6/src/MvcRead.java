@@ -1,3 +1,4 @@
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 /**
@@ -17,8 +18,9 @@ public class MvcRead {
     ControlInt controller = new ControlView(model, view);
 
 
-    ControlInt aController = new Control(null, null);
-    aController.controlScript(new ImageUtil());
+    //ControlInt aController = new Control(null, null);
+    //aController.controlScript(new ImageUtil());
+
 
   }
 }

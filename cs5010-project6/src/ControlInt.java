@@ -1,3 +1,4 @@
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 /**
@@ -9,4 +10,6 @@ public interface ControlInt {
    * Operations that receive input and send them to model and store the output.
    */
   void controlScript(ModelInterface image) throws IOException;
+
+
 }

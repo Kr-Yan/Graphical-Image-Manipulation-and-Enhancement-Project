@@ -22,6 +22,10 @@ JFrame frame;
 
   private JLabel fileOpenDisplay;
   private JLabel fileSaveDisplay;
+
+  private String load = "";
+  JButton fileOpenButton = new JButton("Open a file");
+
   public View() {
 
     super();
@@ -55,9 +59,8 @@ JFrame frame;
     JPanel fileopenPanel = new JPanel();
     fileopenPanel.setLayout(new FlowLayout());
     dialogBoxesPanel.add(fileopenPanel);
-    JButton fileOpenButton = new JButton("Open a file");
     fileOpenButton.setActionCommand("Open file");
-    fileOpenButton.addActionListener(this);
+    fileOpenButton.addActionListener(this);//star
     fileopenPanel.add(fileOpenButton);
     fileOpenDisplay = new JLabel("File path will appear here");
     fileopenPanel.add(fileOpenDisplay);
@@ -71,6 +74,29 @@ JFrame frame;
     filesavePanel.add(fileSaveButton);
     fileSaveDisplay = new JLabel("File path will appear here");
     filesavePanel.add(fileSaveDisplay);
+
+
+    //show an image with a scrollbar
+    JPanel imagePanel = new JPanel();
+    //a border around the panel with a caption
+    imagePanel.setBorder(BorderFactory.createTitledBorder("Showing an image"));
+    imagePanel.setLayout(new GridLayout(1, 0, 10, 10));
+    //imagePanel.setMaximumSize(null);
+    mainPanel.add(imagePanel);
+
+    //String[] images = {"Jellyfish.jpg", "Koala.jpg", "Penguins.jpg"};
+    String[] images = {load};
+
+    JLabel[] imageLabel = new JLabel[images.length];
+    JScrollPane[] imageScrollPane = new JScrollPane[images.length];
+
+    for (int i = 0; i < imageLabel.length; i++) {
+      imageLabel[i] = new JLabel();
+      imageScrollPane[i] = new JScrollPane(imageLabel[i]);
+      imageLabel[i].setIcon(new ImageIcon(images[i]));
+      imageScrollPane[i].setPreferredSize(new Dimension(100, 600));
+      imagePanel.add(imageScrollPane[i]);
+    }
 
 
 
@@ -87,36 +113,20 @@ JFrame frame;
   }
 
 
+
+
   /**
    * Invoked when an action occurs.
    *
    *
    */
-  public void actionPerformed(ActionEvent arg0) {
-    // TODO Auto-generated method stub
-    switch (arg0.getActionCommand()) {
-      case "Open file": {
-        final JFileChooser fchooser = new JFileChooser(".");
-        FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "JPG & GIF Images", "jpg", "gif");
-        fchooser.setFileFilter(filter);
-        int retvalue = fchooser.showOpenDialog(View.this);
-        if (retvalue == JFileChooser.APPROVE_OPTION) {
-          File f = fchooser.getSelectedFile();
-          fileOpenDisplay.setText(f.getAbsolutePath());
-        }
-      }
-      break;
-      case "Save file": {
-        final JFileChooser fchooser = new JFileChooser(".");
-        int retvalue = fchooser.showSaveDialog(View.this);
-        if (retvalue == JFileChooser.APPROVE_OPTION) {
-          File f = fchooser.getSelectedFile();
-          fileSaveDisplay.setText(f.getAbsolutePath());
-        }
-      }
-      break;
-    }
+
+
+
+
+
+  public void display() {
+    setVisible(true);
   }
 
    void setRedData(int [] r) {
@@ -137,9 +147,14 @@ intensity = i;
 
   @Override
   public String getFileName() {
-   return fileOpenDisplay.toString();
+   load = fileOpenDisplay.getText();
+   return load;
   }
 
+  @Override
+  public void setListener(ControlView listener) {
+    fileOpenButton.addActionListener(listener);
+  }
 
 
   /**
@@ -161,6 +176,16 @@ intensity = i;
    */
   @Override
   public void valueChanged(ListSelectionEvent e) {
+
+  }
+
+  /**
+   * Invoked when an action occurs.
+   *
+   * @param e the event to be processed
+   */
+  @Override
+  public void actionPerformed(ActionEvent e) {
 
   }
 }

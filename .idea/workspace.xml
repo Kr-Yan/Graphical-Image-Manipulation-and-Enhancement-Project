@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="this has all my changes now">
+    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="I made getFileName Public now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/ControlInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/ControlInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs5010-project6/src/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/ControlView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs5010-project6/src/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/MvcRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/MvcRead.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs5010-project6/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/IView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681248838605</updated>
       <workItem from="1681248839911" duration="29000" />
-      <workItem from="1681249095182" duration="679000" />
+      <workItem from="1681249095182" duration="4708000" />
     </task>
     <task id="LOCAL-00001" summary="this has all my changes now">
       <created>1681249408160</created>
@@ -62,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681249462684</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="I made getFileName Public now">
+      <created>1681249791880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681249791880</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="this has all my changes now" />
-    <option name="LAST_COMMIT_MESSAGE" value="this has all my changes now" />
+    <MESSAGE value="I made getFileName Public now" />
+    <option name="LAST_COMMIT_MESSAGE" value="I made getFileName Public now" />
   </component>
 </project>
