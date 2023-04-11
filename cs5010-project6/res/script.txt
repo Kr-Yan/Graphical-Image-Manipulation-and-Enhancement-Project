@@ -1,0 +1,10 @@
+#temp command testing document
+load testing.ppm test
+#brighten loadTest by adding 10  
+brighten 10 test test
+#flip the pool
+horizontal-flip test test
+#testing new commands lmao make sure you dont mix greyscale for grayscale
+color-grade test sepia sepiatest
+#save loadTest-brighter
+save sepiatest sepiatest

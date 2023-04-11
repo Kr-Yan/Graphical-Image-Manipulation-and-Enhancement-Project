@@ -1,0 +1,30 @@
+#load the png
+load-other testingImage.jpg loaded
+#brighten
+brighten 10 loaded loaded-brighter
+#create a greyscale using only the value component, as an image loadTest-greyscale
+greyscale value-component loaded-brighter loaded-brighter-grey
+#flip the pool
+horizontal-flip loaded-brighter-grey loaded-brighter-grey-hor
+#save the image as a jpeg
+save-file loaded-brighter-grey-hor jpg output
+#Try blurring
+blur loaded-brighter-grey-hor blurred
+#Try blurring again, I wanna see the vasoline on the screen
+blur blurred blurredTwo
+#MORE BLURRY
+blur blurredTwo blurredThree
+#ok too blurry time to fix it
+sharpen blurredThree sharpenOne
+#ok too blurry time to fix it
+sharpen sharpenOne sharpenTwo
+#ok too blurry time to fix it
+sharpen sharpenTwo sharpenThree
+#colorGrade sepia image
+color-grade loaded sepia sepiaImage
+#colorGrade greyscale image
+color-grade loaded greyscale greyscaleImage
+#dithering image
+dithering loaded ditheringImage
+#save the image as a png
+save-file sharpenThree png sharpened
