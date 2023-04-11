@@ -1,7 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 
-public class ControlView{
+public class ControlView implements ControlInt {
   private ModelInterface model;
 
 
@@ -18,8 +18,18 @@ public class ControlView{
   public void go(ActionEvent e){
     switch (e.getActionCommand()) {
       case "readPPM":
-        String text = view.getFileName();
-        model.
+       // String text = view.getFileName();
+      //  model.
     }
+  }
+
+  /**
+   * Operations that receive input and send them to model and store the output.
+   *
+   * @param image
+   */
+  @Override
+  public void controlScript(ModelInterface image) throws IOException {
+
   }
 }
