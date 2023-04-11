@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cs5010-project6/src/View.java" afterDir="false" />
+    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="this has all my changes now">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs5010-project6/src/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/ControlView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/MvcRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/MvcRead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,11 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/kyledomingos/IdeaProjects/assignment6&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,8 +46,23 @@
       <option name="presentableId" value="Default" />
       <updated>1681248838605</updated>
       <workItem from="1681248839911" duration="29000" />
-      <workItem from="1681249095182" duration="300000" />
+      <workItem from="1681249095182" duration="679000" />
     </task>
+    <task id="LOCAL-00001" summary="this has all my changes now">
+      <created>1681249408160</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681249408160</updated>
+    </task>
+    <task id="LOCAL-00002" summary="this has all my changes now">
+      <created>1681249462684</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681249462684</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -57,5 +78,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="this has all my changes now" />
+    <option name="LAST_COMMIT_MESSAGE" value="this has all my changes now" />
   </component>
 </project>

@@ -135,7 +135,8 @@ JFrame frame;
 intensity = i;
   }
 
-  String getFileName() {
+  @Override
+  public String getFileName() {
    return fileOpenDisplay.toString();
   }
 

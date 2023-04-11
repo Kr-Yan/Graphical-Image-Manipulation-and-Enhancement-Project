@@ -17,8 +17,8 @@ public class ControlView implements ControlInt {
   }
   public void go(ActionEvent e){
     switch (e.getActionCommand()) {
-      case "readPPM":
-       // String text = view.getFileName();
+      case "Open file":
+       String text = view.getFileName();
       //  model.
     }
   }
