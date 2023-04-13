@@ -426,8 +426,8 @@ public class ImageUtil implements ModelInterface {
     int width = picArray.length;
     int height = picArray[0].length;
     String[][] returnArray = new String[width][height];
-    for (int i = 0; i < picArray.length; i++) {
-      for (int j = 0; j < picArray[i].length; j++) {
+    for (int i = 0; i < height; i++) {
+      for (int j = 0; j < width; j++) {
         String[] aComp = picArray[j][i].split(",");
         if (component == 'r') {
           aComp[1] = aComp[0];

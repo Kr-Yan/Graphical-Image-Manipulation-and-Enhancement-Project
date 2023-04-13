@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="I made getFileName Public now">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/ImageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/MockModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/MockModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/ModelInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/ModelInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MockModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,17 +122,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/View.java</url>
-          <line>343</line>
+          <line>329</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/View.java</url>
-          <line>338</line>
-          <properties class="View">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
