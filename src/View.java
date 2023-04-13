@@ -1,4 +1,5 @@
 import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 
@@ -27,10 +28,12 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
   int[] blue = new int[256];
   int[] intensity = new int[256];
   private BufferedImage image = new BufferedImage(1000, 1000, BufferedImage.TYPE_INT_ARGB);
-
+JFreeChart chart;
   private final JLabel fileOpenDisplay;
   private JLabel imageLabel;
   private final JLabel fileSaveDisplay;
+
+  private ChartPanel chartPanel;
 
   private String load = "test.png";
   JButton fileOpenButton = new JButton("Open a file");
@@ -170,12 +173,10 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
 
 
     //
-    JPanel histogramP= new JPanel();
-    histogramP.setBorder(BorderFactory.createTitledBorder("Showing a histogram"));
-    histogramLabel = new JLabel("");
-    histogramP.add(histogramLabel);
-    histogramP.setLayout(new GridLayout(1, 0, 10, 10));
-    mainPanel.add(histogramP);
+    chartPanel = new ChartPanel(chart);
+    chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+    chartPanel.setBackground(Color.DARK_GRAY);
+    mainPanel.add(chartPanel);
 
 
 
@@ -197,6 +198,9 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
   public void display() {
     icon = new ImageIcon(image);
     imageLabel.setIcon(icon);
+
+    chartPanel.setChart(chart);
+    chartPanel.repaint();
     // icon = new ImageIcon(image);
     // imageLableLeft.setIcon(icon);
 
@@ -303,25 +307,30 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
 
 
   @Override
-  public JLabel getOutFileName() {
-    return fileSaveDisplay;
-  }
-
-  @Override
   public void loadBufferedImage(BufferedImage temp) {
     this.image = temp;
     System.out.println("Buffered image was sent, it's now" + this.image);
   }
 
-//  void getLineChart(DefaultCategoryDataset dataset){
-//    JFreeChart chart = ChartFactory.createLineChart(
-//            "Site Traffic", // Chart title
-//            "Date", // X-Axis Label
-//            "Number of Visitor", // Y-Axis Label
-//            dataset
-//    );
-//  }
+  public void getLineChart(DefaultCategoryDataset dataset){
+    JFreeChart chart = ChartFactory.createLineChart(
+            "Site Traffic", // Chart title
+          "Date", // X-Axis Label
+            "Number of Visitor", // Y-Axis Label
+           dataset
+   );
+     this.chart = chart;
+  }
 
+  @Override
+  public String getOutFileName() {
+    return fileSaveDisplay.getText();
+  }
+
+
+  public JLabel getSaveJLabel() {
+    return fileSaveDisplay;
+  }
   @Override
   public JLabel getInFileName() {
     return fileOpenDisplay;

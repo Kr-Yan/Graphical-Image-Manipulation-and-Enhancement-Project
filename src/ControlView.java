@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -63,7 +64,6 @@ public class ControlView implements ControlInt, ActionListener {
           break;
       }
     } */
-  @Override
   public void actionPerformed(ActionEvent e) {
     switch (e.getActionCommand()) {
       case "Open file": {
@@ -87,6 +87,7 @@ public class ControlView implements ControlInt, ActionListener {
             view.loadBufferedImage(temp);
             view.setLoad(path);
             //System.out.println(path);
+            view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
             view.display();
           } else if ("jpg".equals(extensionName) || "png".equals(extensionName)) {
             model.loadImageFileIntoArr("test", path);
@@ -96,6 +97,7 @@ public class ControlView implements ControlInt, ActionListener {
             view.loadBufferedImage(temp);
             view.setLoad(path);
             //System.out.println(path);
+            view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
             view.display();
           } else {
             JOptionPane.showMessageDialog((Component) this.view, "Not a valid file type!",
@@ -108,21 +110,104 @@ public class ControlView implements ControlInt, ActionListener {
 
       break;
       case "Save file": {
+        ///  final JFileChooser fochooser = new JFileChooser(".");
+
+/*
+        fochooser.setFileFilter(new FileFilter(){ private final FileNameExtensionFilter filter =
+        new FileNameExtensionFilter("Compressed files",
+            "zip", "jar", "z", "gz", "tar", "bz2", "bz");
+          @Override
+    public boolean accept(File file) {
+        return filter.accept(file);
+    }
+
+          @Override
+          public String getDescription() {
+            return ".ppm files";
+          }
+
+
+        });
+
+        {
+          @Override
+          public boolean accept(File file)
+          {
+            return file.getName().toUpperCase().equals(".ppm");
+          }
+
+          @Override
+          public String getDescription()
+          {
+            return ".ppm files";
+          }
+        });*/
+
+
         final JFileChooser fochooser = new JFileChooser(".");
+
+        fochooser.setFileFilter(new FileFilter()
+        {
+          @Override
+          public boolean accept(File file)
+          {
+            return file.getName().toUpperCase().equals(".ppm");
+          }
+
+          @Override
+          public String getDescription()
+          {
+            return ".ppm";
+          }
+        });
+
+        fochooser.addChoosableFileFilter(new FileFilter()
+        {
+          @Override
+          public boolean accept(File file)
+          {
+            return file.getName().toUpperCase().equals(".jpg");
+          }
+
+          @Override
+          public String getDescription()
+          {
+            return ".jpg";
+          }
+        });
+
+        fochooser.addChoosableFileFilter(new FileFilter()
+        {
+          @Override
+          public boolean accept(File file)
+          {
+            return file.getName().toUpperCase().equals(".png");
+          }
+
+          @Override
+          public String getDescription()
+          {
+            return ".png";
+          }
+        });
+
         int restvalue = fochooser.showSaveDialog((Component) this.view);
         if (restvalue == JFileChooser.APPROVE_OPTION) {
+          System.out.println("FILECHOOSER FILTER TOSTRING IS " + fochooser.getFileFilter().getDescription());
+          String filetype = fochooser.getFileFilter().getDescription();
           File f = fochooser.getSelectedFile();
-          view.getOutFileName().setText(f.getAbsolutePath());
+          view.getSaveJLabel().setText(f.getAbsolutePath());
           String[] aPath1 = view.getOutFileName().toString().split("\\\\");
           String fileName1 = aPath1[aPath1.length - 1];
-          String lastThree = fileName1.substring(fileName1.length() - 3);
-          System.out.println(fileName1);
-          if (lastThree.equals("jpg") || lastThree.equals("png") || lastThree.equals("gif")) {
-            model.saveFileImBuf(loadedPicArray, lastThree,
-                    "saved");
-          } else if (lastThree.equals("ppm")) {
+          //fileName1 = fileName1 + filetype;
+          //String lastThree = fileName1.substring(fileName1.length() - 3);
+          System.out.println("filename 1 from save is " + fileName1 );
+          if (filetype.equals(".jpg") || filetype.equals(".png") || filetype.equals(".gif")) {
+            model.saveFileImBuf(loadedPicArray, filetype.substring(1),
+                    fileName1);
+          } else if (filetype.equals(".ppm")) {
             model.savePPM(loadedPicArray.length, loadedPicArray[0].length,
-                    225, fileName1, loadedPicArray);
+                    225, fileName1 + filetype, loadedPicArray);
           } else {
             JOptionPane.showMessageDialog((Component) this.view, "Invalid",
                     "Swing Tester", JOptionPane.ERROR_MESSAGE);
@@ -146,6 +231,7 @@ public class ControlView implements ControlInt, ActionListener {
        // buildhist(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -156,6 +242,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -169,6 +256,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -180,6 +268,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -192,6 +281,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -204,6 +294,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -214,6 +305,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -224,6 +316,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;
@@ -234,6 +327,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.loadBufferedImage(temp);
         //view.setLoad(path);
         //System.out.println(path);
+        view.getLineChart(model.buildDataset(model.getArrays(loadedPicArray)));
         view.display();
       }
       break;

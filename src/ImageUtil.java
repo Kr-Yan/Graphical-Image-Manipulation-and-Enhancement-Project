@@ -18,9 +18,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
 
 
 /**
@@ -806,7 +803,7 @@ public class ImageUtil implements ModelInterface {
   }
 
 
-ArrayList<HashMap <Integer, Integer>> getArrays(String[][] loadPicArray){
+public ArrayList<HashMap<Integer, Integer>> getArrays(String[][] loadPicArray) {
     int width=loadPicArray.length;
     int height=loadPicArray[0].length;
     String val;
@@ -845,12 +842,12 @@ ArrayList<HashMap <Integer, Integer>> getArrays(String[][] loadPicArray){
         if(blueHash.containsKey(b)){
           blueCount+=1;
         }
-        int in=(r+g+b)/3;
+        int in=(r / 3) + (g / 3) + (b / 3);
         if(!intenseHash.containsKey(in)){
           intenseCount=1;
         }
         if(intenseHash.containsKey(in)){
-          intenseCount=1;
+          intenseCount+=1;
         }
         redHash.put(r, redCount);
         greenHash.put(g, greenCount);
@@ -865,7 +862,7 @@ ArrayList<HashMap <Integer, Integer>> getArrays(String[][] loadPicArray){
     return AL;
 }
 
-DefaultCategoryDataset builDataset(ArrayList<HashMap<Integer, Integer>> AL){
+public DefaultCategoryDataset buildDataset(ArrayList<HashMap<Integer, Integer>> AL){
   DefaultCategoryDataset dataset = new DefaultCategoryDataset();
   for (HashMap.Entry<Integer, Integer> entry : AL.get(0).entrySet()) {
     Integer key= entry.getKey();
@@ -890,7 +887,7 @@ DefaultCategoryDataset builDataset(ArrayList<HashMap<Integer, Integer>> AL){
   return dataset;
 }
 
-void buildAPlot(DefaultCategoryDataset )
+//void buildAPlot(DefaultCategoryDataset )
 
 @Test
   public void test(){

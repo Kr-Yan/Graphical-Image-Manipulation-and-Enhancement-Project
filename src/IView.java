@@ -1,3 +1,5 @@
+import org.jfree.data.category.DefaultCategoryDataset;
+
 import java.awt.image.BufferedImage;
 
 import javax.swing.*;
@@ -8,7 +10,7 @@ public interface IView {
   void display();
   void setLoad(String path);
   JLabel getInFileName();
-  JLabel getOutFileName();
+  String getOutFileName();
   void loadBufferedImage(BufferedImage temp);
 
   void update();
@@ -21,4 +23,8 @@ public interface IView {
   BufferedImage getCurrentImage();
 
   BufferedImage completedHistogram();
+
+  void getLineChart(DefaultCategoryDataset buildDataset);
+
+  JLabel getSaveJLabel();
 }

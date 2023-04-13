@@ -1,3 +1,5 @@
+import org.jfree.data.category.DefaultCategoryDataset;
+
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -217,6 +219,10 @@ public interface ModelInterface {
 
 
   String[][] buffConvertToArr(BufferedImage current);
+
+  ArrayList<HashMap<Integer, Integer>> getArrays(String[][] loadedPicArray);
+
+  DefaultCategoryDataset buildDataset(ArrayList<HashMap<Integer, Integer>> arrays);
 }
 
 

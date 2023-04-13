@@ -1,3 +1,5 @@
+import org.jfree.data.category.DefaultCategoryDataset;
+
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -437,6 +439,16 @@ public class MockModel implements ModelInterface {
   @Override
   public String[][] buffConvertToArr(BufferedImage current) {
     return new String[0][];
+  }
+
+  @Override
+  public ArrayList<HashMap<Integer, Integer>> getArrays(String[][] loadedPicArray) {
+    return null;
+  }
+
+  @Override
+  public DefaultCategoryDataset buildDataset(ArrayList<HashMap<Integer, Integer>> arrays) {
+    return null;
   }
 
 }
