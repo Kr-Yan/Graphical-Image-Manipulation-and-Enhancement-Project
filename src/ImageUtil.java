@@ -782,7 +782,7 @@ public class ImageUtil implements ModelInterface {
     int width = imgArray.length;
     int height = imgArray[0].length;
 
-    BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+    BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
     for (int i = 0; i < height; i++) {
       for (int j = 0; j < width; j++) {
         val = imgArray[j][i];
@@ -790,6 +790,7 @@ public class ImageUtil implements ModelInterface {
         int r = Integer.parseInt(arrOfStr[0]);
         int g = Integer.parseInt(arrOfStr[1]);
         int b = Integer.parseInt(arrOfStr[2]);
+
         Color colorAtPixel = new Color(r, g, b);
         int rgb = colorAtPixel.getRGB();
         img.setRGB(j, i, rgb);

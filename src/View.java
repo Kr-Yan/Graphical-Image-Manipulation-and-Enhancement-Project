@@ -33,7 +33,21 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
   JButton fileSaveButton = new JButton("Save a file");
   JButton flipVerticalButton;
   JButton flipHorizontalButton;
+  JButton greyscaleButton;
+  JButton blurringButton;
+  JButton sharpeningButton;
+  JButton sepiaButton;
+  JButton redButton;
+  JButton greenButton;
+  JButton blueButton;
   JCheckBox[] componentVButton= new JCheckBox[3];
+
+  //panel
+  //histogram method
+  //histogram helper-> an array list of hashmap
+  //put this in control view
+  //save
+
 
   public View() throws IOException {
 
@@ -50,14 +64,16 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     JScrollPane mainScrollPane = new JScrollPane(mainPanel);
     add(mainScrollPane);
 
+    //
+    JPanel
+
 
     //dialog boxes
     JPanel dialogBoxesPanel = new JPanel();
     dialogBoxesPanel.setBorder(BorderFactory.createTitledBorder("Dialog boxes"));
     dialogBoxesPanel.setLayout(new BoxLayout(dialogBoxesPanel, BoxLayout.PAGE_AXIS));
     mainPanel.add(dialogBoxesPanel);
-
-//file open
+    //file open
     JPanel fileopenPanel = new JPanel();
     fileopenPanel.setLayout(new FlowLayout());
     dialogBoxesPanel.add(fileopenPanel);
@@ -92,25 +108,48 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     mainPanel.add(flipHorizontalButton);
 
 
-    //componenet-visual
+    //red
+    redButton= new JButton("red-component");
+    redButton.setActionCommand("red-component");
+    redButton.addActionListener(this);
+    mainPanel.add(redButton);
 
-    componentVButton[0]=new JCheckBox("red");
-    componentVButton[1]=new JCheckBox("green");
-    componentVButton[2]=new JCheckBox("blue");
-    for(int i = 0; i < componentVButton.length; i++){
-    componentVButton[i].setSelected(false);
-    componentVButton[i].setActionCommand("CB" + (i + 1));
-    componentVButton[i].addActionListener(this);
-    mainPanel.add(componentVButton[i]);
-    }
+    //green
+    greenButton= new JButton("green-component");
+    greenButton.setActionCommand("green-component");
+    greenButton.addActionListener(this);
+    mainPanel.add(greenButton);
 
-
+    //blue
+    blueButton= new JButton("blue-component");
+    blueButton.setActionCommand("blue-component");
+    blueButton.addActionListener(this);
+    mainPanel.add(blueButton);
 
 
     //greyscale
+    greyscaleButton= new JButton("greyscale");
+    greyscaleButton.setActionCommand("greyscale");
+    greyscaleButton.addActionListener(this);
+    mainPanel.add(greyscaleButton);
 
+    //blurring
+    blurringButton= new JButton("blurring");
+    blurringButton.setActionCommand("blurring");
+    blurringButton.addActionListener(this);
+    mainPanel.add(blurringButton);
 
+    //sharpening
+    sharpeningButton= new JButton("sharpening");
+    sharpeningButton.setActionCommand("sharpening");
+    sharpeningButton.addActionListener(this);
+    mainPanel.add(sharpeningButton);
 
+    //sepia
+    sepiaButton= new JButton("sepia");
+    sepiaButton.setActionCommand("sepia");
+    sepiaButton.addActionListener(this);
+    mainPanel.add(sepiaButton);
 
 
     //show an image with a scrollbar
@@ -118,7 +157,6 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     //a border around the panel with a caption
     imagePanel.setBorder(BorderFactory.createTitledBorder("Showing an image"));
     imagePanel.setLayout(new GridLayout(1, 0, 10, 10));
-    //imagePanel.setMaximumSize(null);
     //JLabel
     imageLabel = new JLabel("");
 //    ImageIcon images = new ImageIcon("test.png");
@@ -236,9 +274,13 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     fileSaveButton.addActionListener(listener);
     flipVerticalButton.addActionListener(listener);
     flipHorizontalButton.addActionListener(listener);
-    componentVButton[0].addActionListener(listener);
-    componentVButton[1].addActionListener(listener);
-    componentVButton[2].addActionListener(listener);
+    redButton.addActionListener(listener);
+    greenButton.addActionListener(listener);
+    blueButton.addActionListener(listener);
+    greyscaleButton.addActionListener(listener);
+    blurringButton.addActionListener(listener);
+    sharpeningButton.addActionListener(listener);
+    sepiaButton.addActionListener(listener);
   }
 
   /**

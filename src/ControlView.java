@@ -116,6 +116,7 @@ public class ControlView implements ControlInt, ActionListener {
           String[] aPath1 = view.getOutFileName().toString().split("\\\\");
           String fileName1 = aPath1[aPath1.length - 1];
           String lastThree = fileName1.substring(fileName1.length() - 3);
+          System.out.println(fileName1);
           if (lastThree.equals("jpg") || lastThree.equals("png") || lastThree.equals("gif")) {
             model.saveFileImBuf(loadedPicArray, lastThree,
                     "saved");
@@ -142,6 +143,7 @@ public class ControlView implements ControlInt, ActionListener {
         loadedPicArray = model.flipPPMVert("flipped-v", loadedPicArray);
         temp=model.getImages().get("flipped-v");
         view.loadBufferedImage(temp);
+       // buildhist(temp);
         //view.setLoad(path);
         //System.out.println(path);
         view.display();
@@ -159,7 +161,7 @@ public class ControlView implements ControlInt, ActionListener {
       break;
       // the component should be an input bottom that store that input. Now I set it as 'r', but
       // need to change later.
-      case "CB1": {
+      case "red-component": {
         model.visualizeComponent("componentVisual", 'r', loadedPicArray);
         loadedPicArray = model.visualizeComponent("componentVisual", 'r',
                 loadedPicArray);
@@ -170,7 +172,7 @@ public class ControlView implements ControlInt, ActionListener {
         view.display();
       }
       break;
-      case "CB2": {
+      case "green-component": {
         model.visualizeComponent("componentVisual", 'g', loadedPicArray);
         loadedPicArray = model.visualizeComponent("componentVisual", 'g',
                 loadedPicArray);
@@ -182,7 +184,7 @@ public class ControlView implements ControlInt, ActionListener {
       }
       break;
 
-      case "CB3": {
+      case "blue-component": {
         model.visualizeComponent("componentVisual", 'b', loadedPicArray);
         loadedPicArray = model.visualizeComponent("componentVisual", 'b',
                 loadedPicArray);
@@ -198,25 +200,41 @@ public class ControlView implements ControlInt, ActionListener {
         model.colorGrade("greyscale", loadedPicArray, "greyscale");
         loadedPicArray = model.colorGrade("greyscale", loadedPicArray,
                 "greyscale");
-        model.getImages().get("greyscale");
+        temp=model.getImages().get("greyscale");
+        view.loadBufferedImage(temp);
+        //view.setLoad(path);
+        //System.out.println(path);
+        view.display();
       }
       break;
       case "blurring": {
         model.blur("blur", loadedPicArray);
         loadedPicArray = model.blur("blur", loadedPicArray);
-        model.getImages().get("blur");
+        temp=model.getImages().get("blur");
+        view.loadBufferedImage(temp);
+        //view.setLoad(path);
+        //System.out.println(path);
+        view.display();
       }
       break;
       case "sharpening": {
         model.sharpen("sharpen", loadedPicArray);
         loadedPicArray = model.sharpen("sharpen", loadedPicArray);
-        model.getImages().get("sharpen");
+        temp=model.getImages().get("sharpen");
+        view.loadBufferedImage(temp);
+        //view.setLoad(path);
+        //System.out.println(path);
+        view.display();
       }
       break;
       case "sepia": {
         model.colorGrade("sepia", loadedPicArray, "sepia");
         loadedPicArray = model.colorGrade("sepia", loadedPicArray, "sepia");
-        model.getImages().get("sepia");
+        temp=model.getImages().get("sepia");
+        view.loadBufferedImage(temp);
+        //view.setLoad(path);
+        //System.out.println(path);
+        view.display();
       }
       break;
     }

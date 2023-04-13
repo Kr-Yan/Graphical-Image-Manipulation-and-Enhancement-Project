@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="I made getFileName Public now">
+      <change beforePath="$PROJECT_DIR$/.idea/assignment6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assignment6.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/Control.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/ControlInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/ControlInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/ControlView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/MvcRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/MvcRead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs5010-project6/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs5010-project6/src/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/Control.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,14 +25,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kyledomingos/IdeaProjects/assignment6&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/kairuoyan/Desktop/pdp labs/assignment6"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
