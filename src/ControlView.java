@@ -133,10 +133,10 @@ public class ControlView implements ControlInt, ActionListener {
       break;
 
       //Image Histograms:Not sure
-      case "Histogram": {
-        this.updateHistogramArray();
-      }
-      break;
+//      case "Histogram": {
+//        this.updateHistogramArray();
+//      }
+//      break;
 
       case "flip-vertical": {
         model.flipPPMVert("flipped-v", loadedPicArray);
@@ -240,62 +240,62 @@ public class ControlView implements ControlInt, ActionListener {
     }
   }
 
-  /**
-   * a method for histogram.
-   */
-  public void updateHistogramArray() {
-    BufferedImage current = view.getCurrentImage();
-    String[][] values = model.buffConvertToArr(current);
-
-    model.redScale("redval", values);
-    model.greenScale("greenval", values);
-    model.blueScale("blueval", values);
-    model.intensityScale("intensity", values);
-
-    BufferedImage redvalues = model.getImages().get("redval");
-    BufferedImage greenvalues = model.getImages().get("greenval");
-    BufferedImage bluevalues = model.getImages().get("blueval");
-    BufferedImage intensityvalues = model.getImages().get("intensity");
-
-    for (int i = 0; i < redvalues.getHeight(); i++) {
-      for (int j = 0; j < redvalues.getWidth(); j++) {
-        int pixel = redvalues.getRGB(j, i);
-        int redVal = (pixel >> 16) & 0xff;
-        red[redVal] = red[redVal] + 1;
-      }
-    }
-
-    for (int i = 0; i < greenvalues.getHeight(); i++) {
-      for (int j = 0; j < greenvalues.getWidth(); j++) {
-        int pixel = greenvalues.getRGB(j, i);
-        int greenVal = (pixel >> 8) & 0xff;
-        green[greenVal] = green[greenVal] + 1;
-      }
-    }
-
-    for (int i = 0; i < bluevalues.getHeight(); i++) {
-      for (int j = 0; j < bluevalues.getWidth(); j++) {
-        int pixel = bluevalues.getRGB(j, i);
-        int blueVal = (pixel) & 0xff;
-        blue[blueVal] = blue[blueVal] + 1;
-      }
-    }
-
-    for (int i = 0; i < intensityvalues.getHeight(); i++) {
-      for (int j = 0; j < intensityvalues.getWidth(); j++) {
-        int pixel = intensityvalues.getRGB(j, i);
-        int redVal = (pixel >> 16) & 0xff;
-        intensity[redVal] = intensity[redVal] + 1;
-      }
-    }
-
-    view.setRedData(red);
-    view.setGreenData(green);
-    view.setBlueData(blue);
-    view.setIntensityData(intensity);
-
-
-  }
+//  /**
+//   * a method for histogram.
+//   */
+//  public void updateHistogramArray() {
+//    BufferedImage current = view.getCurrentImage();
+//    String[][] values = model.buffConvertToArr(current);
+//
+//    model.redScale("redval", values);
+//    model.greenScale("greenval", values);
+//    model.blueScale("blueval", values);
+//    model.intensityScale("intensity", values);
+//
+//    BufferedImage redvalues = model.getImages().get("redval");
+//    BufferedImage greenvalues = model.getImages().get("greenval");
+//    BufferedImage bluevalues = model.getImages().get("blueval");
+//    BufferedImage intensityvalues = model.getImages().get("intensity");
+//
+//    for (int i = 0; i < redvalues.getHeight(); i++) {
+//      for (int j = 0; j < redvalues.getWidth(); j++) {
+//        int pixel = redvalues.getRGB(j, i);
+//        int redVal = (pixel >> 16) & 0xff;
+//        red[redVal] = red[redVal] + 1;
+//      }
+//    }
+//
+//    for (int i = 0; i < greenvalues.getHeight(); i++) {
+//      for (int j = 0; j < greenvalues.getWidth(); j++) {
+//        int pixel = greenvalues.getRGB(j, i);
+//        int greenVal = (pixel >> 8) & 0xff;
+//        green[greenVal] = green[greenVal] + 1;
+//      }
+//    }
+//
+//    for (int i = 0; i < bluevalues.getHeight(); i++) {
+//      for (int j = 0; j < bluevalues.getWidth(); j++) {
+//        int pixel = bluevalues.getRGB(j, i);
+//        int blueVal = (pixel) & 0xff;
+//        blue[blueVal] = blue[blueVal] + 1;
+//      }
+//    }
+//
+//    for (int i = 0; i < intensityvalues.getHeight(); i++) {
+//      for (int j = 0; j < intensityvalues.getWidth(); j++) {
+//        int pixel = intensityvalues.getRGB(j, i);
+//        int redVal = (pixel >> 16) & 0xff;
+//        intensity[redVal] = intensity[redVal] + 1;
+//      }
+//    }
+//
+//    view.setRedData(red);
+//    view.setGreenData(green);
+//    view.setBlueData(blue);
+//    view.setIntensityData(intensity);
+//
+//
+//  }
 }
 
 

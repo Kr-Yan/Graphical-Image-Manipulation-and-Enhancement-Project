@@ -1,3 +1,7 @@
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.DefaultCategoryDataset;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,7 +44,7 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
   JButton redButton;
   JButton greenButton;
   JButton blueButton;
-  JCheckBox[] componentVButton= new JCheckBox[3];
+  JLabel histogramLabel;
 
   //panel
   //histogram method
@@ -63,9 +67,6 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     //scroll bars around this main panel
     JScrollPane mainScrollPane = new JScrollPane(mainPanel);
     add(mainScrollPane);
-
-    //
-    JPanel
 
 
     //dialog boxes
@@ -156,7 +157,6 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     JPanel imagePanel = new JPanel();
     //a border around the panel with a caption
     imagePanel.setBorder(BorderFactory.createTitledBorder("Showing an image"));
-    imagePanel.setLayout(new GridLayout(1, 0, 10, 10));
     //JLabel
     imageLabel = new JLabel("");
 //    ImageIcon images = new ImageIcon("test.png");
@@ -169,6 +169,16 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     mainPanel.add(imagePanel);
 
 
+    //
+    JPanel histogramP= new JPanel();
+    histogramP.setBorder(BorderFactory.createTitledBorder("Showing a histogram"));
+    histogramLabel = new JLabel("");
+    histogramP.add(histogramLabel);
+    histogramP.setLayout(new GridLayout(1, 0, 10, 10));
+    mainPanel.add(histogramP);
+
+
+
     Canvas histogram = new Canvas();
     //a border around the panel with a caption
     //histogram.setBorder(BorderFactory.createTitledBorder("Showing an image"));
@@ -176,18 +186,8 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     //imagePanel.setMaximumSize(null);
     mainPanel.add(histogram);
 
-//    JLabel fileFVDisplay = new JLabel("");
-////    mainPanel.add(imagePanel);
-//    flipVPanel.add(fileFVDisplay);
-//
-
     mainPanel.setVisible(true);
 
-
-//4. Size the frame.
-    //this.pack();
-//5. Show it.
-    // mainPanel.setVisible(true);
   }
 
 
@@ -312,6 +312,15 @@ public class View extends JFrame implements ActionListener, ItemListener, ListSe
     this.image = temp;
     System.out.println("Buffered image was sent, it's now" + this.image);
   }
+
+//  void getLineChart(DefaultCategoryDataset dataset){
+//    JFreeChart chart = ChartFactory.createLineChart(
+//            "Site Traffic", // Chart title
+//            "Date", // X-Axis Label
+//            "Number of Visitor", // Y-Axis Label
+//            dataset
+//    );
+//  }
 
   @Override
   public JLabel getInFileName() {
