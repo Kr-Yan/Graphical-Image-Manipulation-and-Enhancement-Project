@@ -1,5 +1,4 @@
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.junit.Test;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -51,11 +50,11 @@ public class ImageUtil implements ModelInterface {
 
 
   float[] sharpenMatrix = {
-          -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f,
-          -1 / 8f, 1 / 4f, 1 / 4f, 1 / 4f, -1 / 8f,
-          -1 / 8f, 1 / 4f, 1, 1 / 4f, -1 / 8f,
-          -1 / 8f, 1 / 4f, 1 / 4f, 1 / 4f, -1 / 8f,
-          -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f
+    -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f,
+    -1 / 8f, 1 / 4f, 1 / 4f, 1 / 4f, -1 / 8f,
+    -1 / 8f, 1 / 4f, 1, 1 / 4f, -1 / 8f,
+    -1 / 8f, 1 / 4f, 1 / 4f, 1 / 4f, -1 / 8f,
+    -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f, -1 / 8f
   };
 
 
@@ -802,52 +801,56 @@ public class ImageUtil implements ModelInterface {
     return img;
   }
 
-
-public ArrayList<HashMap<Integer, Integer>> getArrays(String[][] loadPicArray) {
-    int width=loadPicArray.length;
-    int height=loadPicArray[0].length;
+  /**
+   * get Arrays into Hashmaps, and then hashmaps into an arraylist.
+   * @param loadPicArray a 2D array.
+   * @return an arraylist of hashmaps.
+   */
+  public ArrayList<HashMap<Integer, Integer>> getArrays(String[][] loadPicArray) {
+    int width = loadPicArray.length;
+    int height = loadPicArray[0].length;
     String val;
-    int redCount=0;
-    int greenCount=0;
-    int blueCount=0;
-    int intenseCount=0;
-    HashMap<Integer, Integer> redHash= new HashMap<>();
-    HashMap<Integer, Integer> greenHash= new HashMap<>();
-  HashMap<Integer, Integer> blueHash= new HashMap<>();
-  HashMap<Integer, Integer> intenseHash= new HashMap<>();
-  ArrayList<HashMap <Integer, Integer>> AL= new ArrayList<>();
+    int redCount = 0;
+    int greenCount = 0;
+    int blueCount = 0;
+    int intenseCount = 0;
+    HashMap<Integer, Integer> redHash = new HashMap<>();
+    HashMap<Integer, Integer> greenHash = new HashMap<>();
+    HashMap<Integer, Integer> blueHash = new HashMap<>();
+    HashMap<Integer, Integer> intenseHash = new HashMap<>();
+    ArrayList<HashMap<Integer, Integer>> aL = new ArrayList<>();
 
-  for(int i=0; i<height; i++){
-      for(int j=0; j<width; j++){
-        val= loadPicArray[j][i];
-        String[] arrOfStr=val.split(",",3);
-        int r= Integer.parseInt(arrOfStr[0]);
-        int g= Integer.parseInt(arrOfStr[1]);
-        int b= Integer.parseInt(arrOfStr[2]);
-        if(!redHash.containsKey(r)){
-          redCount=1;
+    for (int i = 0; i < height; i++) {
+      for (int j = 0; j < width; j++) {
+        val = loadPicArray[j][i];
+        String[] arrOfStr = val.split(",", 3);
+        int r = Integer.parseInt(arrOfStr[0]);
+        int g = Integer.parseInt(arrOfStr[1]);
+        int b = Integer.parseInt(arrOfStr[2]);
+        if (!redHash.containsKey(r)) {
+          redCount = 1;
         }
-        if(redHash.containsKey(r)){
-          redCount+=1;
+        if (redHash.containsKey(r)) {
+          redCount += 1;
         }
-        if(!greenHash.containsKey(g)){
-          greenCount=1;
+        if (!greenHash.containsKey(g)) {
+          greenCount = 1;
         }
-        if(greenHash.containsKey(g)){
-          greenCount+=1;
+        if (greenHash.containsKey(g)) {
+          greenCount += 1;
         }
-        if(!blueHash.containsKey(b)){
-          blueCount=1;
+        if (!blueHash.containsKey(b)) {
+          blueCount = 1;
         }
-        if(blueHash.containsKey(b)){
-          blueCount+=1;
+        if (blueHash.containsKey(b)) {
+          blueCount += 1;
         }
-        int in=(r / 3) + (g / 3) + (b / 3);
-        if(!intenseHash.containsKey(in)){
-          intenseCount=1;
+        int in = (r / 3) + (g / 3) + (b / 3);
+        if (!intenseHash.containsKey(in)) {
+          intenseCount = 1;
         }
-        if(intenseHash.containsKey(in)){
-          intenseCount+=1;
+        if (intenseHash.containsKey(in)) {
+          intenseCount += 1;
         }
         redHash.put(r, redCount);
         greenHash.put(g, greenCount);
@@ -855,52 +858,42 @@ public ArrayList<HashMap<Integer, Integer>> getArrays(String[][] loadPicArray) {
         intenseHash.put(in, intenseCount);
       }
     }
-  AL.add(redHash);
-  AL.add(greenHash);
-  AL.add(blueHash);
-  AL.add(intenseHash);
-    return AL;
-}
-
-public DefaultCategoryDataset buildDataset(ArrayList<HashMap<Integer, Integer>> AL){
-  DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-  for (HashMap.Entry<Integer, Integer> entry : AL.get(0).entrySet()) {
-    Integer key= entry.getKey();
-    Integer val= entry.getValue();
-    dataset.addValue(val,"red",key);
+    aL.add(redHash);
+    aL.add(greenHash);
+    aL.add(blueHash);
+    aL.add(intenseHash);
+    return aL;
   }
-  for (HashMap.Entry<Integer, Integer> entry : AL.get(1).entrySet()) {
-    Integer key= entry.getKey();
-    Integer val= entry.getValue();
-    dataset.addValue(val,"green",key);
+
+  /**
+   * a method that build dataset for chartmaking method.
+   * @param aL an arraylist of hashmaps.
+   * @return a dataset.
+   */
+  public DefaultCategoryDataset buildDataset(ArrayList<HashMap<Integer, Integer>> aL) {
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+    for (HashMap.Entry<Integer, Integer> entry : aL.get(0).entrySet()) {
+      Integer key = entry.getKey();
+      Integer val = entry.getValue();
+      dataset.addValue(val, "red", key);
+    }
+    for (HashMap.Entry<Integer, Integer> entry : aL.get(1).entrySet()) {
+      Integer key = entry.getKey();
+      Integer val = entry.getValue();
+      dataset.addValue(val, "green", key);
+    }
+    for (HashMap.Entry<Integer, Integer> entry : aL.get(2).entrySet()) {
+      Integer key = entry.getKey();
+      Integer val = entry.getValue();
+      dataset.addValue(val, "blue", key);
+    }
+    for (HashMap.Entry<Integer, Integer> entry : aL.get(3).entrySet()) {
+      Integer key = entry.getKey();
+      Integer val = entry.getValue();
+      dataset.addValue(val, "intensity", key);
+    }
+    return dataset;
   }
-  for (HashMap.Entry<Integer, Integer> entry : AL.get(2).entrySet()) {
-    Integer key= entry.getKey();
-    Integer val= entry.getValue();
-    dataset.addValue(val,"blue",key);
-  }
-  for (HashMap.Entry<Integer, Integer> entry : AL.get(3).entrySet()) {
-    Integer key= entry.getKey();
-    Integer val= entry.getValue();
-    dataset.addValue(val,"intensity",key);
-  }
-  return dataset;
-}
-
-//void buildAPlot(DefaultCategoryDataset )
-
-@Test
-  public void test(){
-  String[][] picArray = {
-          {"255,0,0", "0,255,0"},
-          {"0,0,255", "255,255,255"}
-  };
-  ArrayList<HashMap <Integer, Integer>> al= getArrays(picArray);
-  String g=al.get(0).get(255).toString();
-
-  System.out.println(g);
-
-}
 
 }
 

@@ -3,17 +3,28 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import java.awt.*;
+import java.awt.FlowLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Color;
+import java.awt.Canvas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.Arrays;
 
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.BoxLayout;
+import javax.swing.JScrollPane;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.BorderFactory;
+import javax.swing.SwingUtilities;
 
-import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 //import
@@ -21,21 +32,13 @@ import javax.swing.event.ListSelectionListener;
 /**
  * The implementation of the view interface.
  */
-public class View extends JFrame implements ActionListener, ItemListener, ListSelectionListener, IView {
-  private ImageIcon icon;
-  int[] red = new int[256];
-  int[] green = new int[256];
-  int[] blue = new int[256];
-  int[] intensity = new int[256];
+public class View extends JFrame implements ActionListener, ItemListener,
+        ListSelectionListener, IView {
   private BufferedImage image = new BufferedImage(1000, 1000, BufferedImage.TYPE_INT_ARGB);
-JFreeChart chart;
-  private final JLabel fileOpenDisplay;
+  JFreeChart chart;
   private JLabel imageLabel;
   private final JLabel fileSaveDisplay;
-
   private ChartPanel chartPanel;
-
-  private String load = "test.png";
   JButton fileOpenButton = new JButton("Open a file");
   JButton fileSaveButton = new JButton("Save a file");
   JButton flipVerticalButton;
@@ -47,15 +50,12 @@ JFreeChart chart;
   JButton redButton;
   JButton greenButton;
   JButton blueButton;
-  JLabel histogramLabel;
 
-  //panel
-  //histogram method
-  //histogram helper-> an array list of hashmap
-  //put this in control view
-  //save
-
-
+  /**
+   * View class.
+   *
+   * @throws IOException throw if any exception
+   */
   public View() throws IOException {
 
 
@@ -77,15 +77,15 @@ JFreeChart chart;
     dialogBoxesPanel.setBorder(BorderFactory.createTitledBorder("Dialog boxes"));
     dialogBoxesPanel.setLayout(new BoxLayout(dialogBoxesPanel, BoxLayout.PAGE_AXIS));
     mainPanel.add(dialogBoxesPanel);
+
     //file open
     JPanel fileopenPanel = new JPanel();
     fileopenPanel.setLayout(new FlowLayout());
     dialogBoxesPanel.add(fileopenPanel);
-    //JButton fileOpenButton = new JButton("Open a file");
     fileOpenButton.setActionCommand("Open file");
     fileOpenButton.addActionListener(this);
     fileopenPanel.add(fileOpenButton);
-    fileOpenDisplay = new JLabel("File path will appear here");
+    JLabel fileOpenDisplay = new JLabel("File path will appear here");
     fileopenPanel.add(fileOpenDisplay);
 
     //file save
@@ -100,57 +100,55 @@ JFreeChart chart;
     filesavePanel.add(fileSaveDisplay);
 
     // flip a image
-    flipVerticalButton= new JButton("flip vertically");
+    flipVerticalButton = new JButton("flip vertically");
     flipVerticalButton.setActionCommand("flip-vertical");
     flipVerticalButton.addActionListener(this);
     mainPanel.add(flipVerticalButton);
 
     // flip a image
-    flipHorizontalButton= new JButton("flip horizontally");
+    flipHorizontalButton = new JButton("flip horizontally");
     flipHorizontalButton.setActionCommand("flip-horizontal");
     flipHorizontalButton.addActionListener(this);
     mainPanel.add(flipHorizontalButton);
 
-
     //red
-    redButton= new JButton("red-component");
+    redButton = new JButton("red-component");
     redButton.setActionCommand("red-component");
     redButton.addActionListener(this);
     mainPanel.add(redButton);
 
     //green
-    greenButton= new JButton("green-component");
+    greenButton = new JButton("green-component");
     greenButton.setActionCommand("green-component");
     greenButton.addActionListener(this);
     mainPanel.add(greenButton);
 
     //blue
-    blueButton= new JButton("blue-component");
+    blueButton = new JButton("blue-component");
     blueButton.setActionCommand("blue-component");
     blueButton.addActionListener(this);
     mainPanel.add(blueButton);
 
-
     //greyscale
-    greyscaleButton= new JButton("greyscale");
+    greyscaleButton = new JButton("greyscale");
     greyscaleButton.setActionCommand("greyscale");
     greyscaleButton.addActionListener(this);
     mainPanel.add(greyscaleButton);
 
     //blurring
-    blurringButton= new JButton("blurring");
+    blurringButton = new JButton("blurring");
     blurringButton.setActionCommand("blurring");
     blurringButton.addActionListener(this);
     mainPanel.add(blurringButton);
 
     //sharpening
-    sharpeningButton= new JButton("sharpening");
+    sharpeningButton = new JButton("sharpening");
     sharpeningButton.setActionCommand("sharpening");
     sharpeningButton.addActionListener(this);
     mainPanel.add(sharpeningButton);
 
     //sepia
-    sepiaButton= new JButton("sepia");
+    sepiaButton = new JButton("sepia");
     sepiaButton.setActionCommand("sepia");
     sepiaButton.addActionListener(this);
     mainPanel.add(sepiaButton);
@@ -160,11 +158,9 @@ JFreeChart chart;
     JPanel imagePanel = new JPanel();
     //a border around the panel with a caption
     imagePanel.setBorder(BorderFactory.createTitledBorder("Showing an image"));
-    //JLabel
     imageLabel = new JLabel("");
-//    ImageIcon images = new ImageIcon("test.png");
     imagePanel.add(imageLabel);
-    JScrollPane imageScrollPane=new JScrollPane(imageLabel);
+    JScrollPane imageScrollPane = new JScrollPane(imageLabel);
     imageScrollPane.setPreferredSize(new Dimension(100, 600));
     imagePanel.add(imageScrollPane);
     imagePanel.setBorder(BorderFactory.createTitledBorder("Showing an image"));
@@ -172,23 +168,13 @@ JFreeChart chart;
     mainPanel.add(imagePanel);
 
 
-    //
     chartPanel = new ChartPanel(chart);
     chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
     chartPanel.setBackground(Color.DARK_GRAY);
     mainPanel.add(chartPanel);
-
-
-
     Canvas histogram = new Canvas();
-    //a border around the panel with a caption
-    //histogram.setBorder(BorderFactory.createTitledBorder("Showing an image"));
-    //imagePanel.setLayout(new GridLayout(1, 0, 10, 10));
-    //imagePanel.setMaximumSize(null);
     mainPanel.add(histogram);
-
     mainPanel.setVisible(true);
-
   }
 
 
@@ -196,80 +182,15 @@ JFreeChart chart;
    * Display method.
    */
   public void display() {
-    icon = new ImageIcon(image);
+    ImageIcon icon = new ImageIcon(image);
     imageLabel.setIcon(icon);
-
     chartPanel.setChart(chart);
     chartPanel.repaint();
-    // icon = new ImageIcon(image);
-    // imageLableLeft.setIcon(icon);
-
-    //icon is now changed
-    //imageLable.
     this.revalidate();
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setVisible(true);
-    //imageLableLeft.repaint();
     SwingUtilities.updateComponentTreeUI(this);
 
-  }
-
-  public void setRedData(int[] r) {
-    red = r;
-  }
-
-  public void setGreenData(int[] g) {
-    green = g;
-  }
-
-  public void setBlueData(int[] b) {
-    blue = b;
-  }
-
-  public void setIntensityData(int[] i) {
-    intensity = i;
-  }
-
-
-  /**
-   * The method that makes the bufferedimage representation of the histogram.
-   *
-   * @return the bufferedimage.
-   */
-  public BufferedImage completedHistogram() {
-    int rmax;
-    int gmax;
-    int bmax;
-    int intensmax;
-
-    intensmax = Arrays.stream(intensity).max().getAsInt();
-    gmax = Arrays.stream(green).max().getAsInt();
-    rmax = Arrays.stream(red).max().getAsInt();
-    bmax = Arrays.stream(blue).max().getAsInt();
-
-    int max = Math.max(Math.max(rmax, bmax), Math.max(gmax, intensmax));
-
-    BufferedImage output = new BufferedImage(256, max, BufferedImage.TYPE_INT_RGB);
-
-    //this is terrible but I'm sick as hell and out of time.
-    for (int i = 0; i < 255; i++) {
-      //lets do red first
-      output.setRGB(i, red[i], 16711680);
-      //green
-      output.setRGB(i, green[i], 65280);
-      //blue
-      output.setRGB(i, blue[i], 255);
-      //intensity
-      output.setRGB(i, intensity[i], 0);
-    }
-    return output;
-  }
-
-
-  @Override
-  public String getFileName() {
-    load = fileOpenDisplay.getText();
-    return load;
   }
 
   @Override
@@ -288,23 +209,13 @@ JFreeChart chart;
   }
 
   /**
+   * setLoad method.
+   *
    * @param filename The path to the file in question.
    */
   public void setLoad(String filename) {
-    load = filename;
+    String load = filename;
   }
-
-
-  @Override
-  public void update() {
-    display();
-  }
-
-  @Override
-  public BufferedImage getCurrentImage() {
-    return image;
-  }
-
 
   @Override
   public void loadBufferedImage(BufferedImage temp) {
@@ -312,14 +223,19 @@ JFreeChart chart;
     System.out.println("Buffered image was sent, it's now" + this.image);
   }
 
-  public void getLineChart(DefaultCategoryDataset dataset){
+  /**
+   * Get line chart from a given dataset.
+   *
+   * @param dataset a givin dataset.
+   */
+  public void getLineChart(DefaultCategoryDataset dataset) {
     JFreeChart chart = ChartFactory.createLineChart(
-            "Histogram", // Chart title
-          "Frequency", // X-Axis Label
-            "Value", // Y-Axis Label
-           dataset
-   );
-     this.chart = chart;
+            "Site Traffic", // Chart title
+            "Date", // X-Axis Label
+            "Number of Visitor", // Y-Axis Label
+            dataset
+    );
+    this.chart = chart;
   }
 
   @Override
@@ -327,15 +243,14 @@ JFreeChart chart;
     return fileSaveDisplay.getText();
   }
 
-
+  /**
+   * get save jLabel.
+   *
+   * @return save jLabel.
+   */
   public JLabel getSaveJLabel() {
     return fileSaveDisplay;
   }
-  @Override
-  public JLabel getInFileName() {
-    return fileOpenDisplay;
-  }
-
 
   /**
    * Invoked when an item has been selected or deselected by the user.
@@ -346,7 +261,7 @@ JFreeChart chart;
    */
   @Override
   public void itemStateChanged(ItemEvent e) {
-
+    //not used
   }
 
   /**
@@ -356,7 +271,7 @@ JFreeChart chart;
    */
   @Override
   public void valueChanged(ListSelectionEvent e) {
-
+    // not used
   }
 
   /**
@@ -366,22 +281,6 @@ JFreeChart chart;
    */
   @Override
   public void actionPerformed(ActionEvent e) {
-
+    //not used
   }
 }
-
-
-//histogram should always be seen
-//filechooser for selecting where to save and where to open files
-//figure out if you need to have the separate controller for the gui or just its own thing.
-//histograms always on screen
-//radial buttons and drop down menus for file saving
-//menu boxes for picking up the string for the name?
-
-
-//FOR HISTOGRAM
-//The horizontal axis of the graph represents the tonal variations,
-// while the vertical axis represents the total number of pixels in that particular tone.
-
-//name
-//0-255 four arrays
