@@ -61,7 +61,7 @@ public class View extends JFrame implements ActionListener, ItemListener,
 
     super();
     setTitle("Swing features");
-    setSize(600, 600);
+    setSize(1600, 800);
 
 
     JPanel mainPanel = new JPanel();
@@ -230,9 +230,9 @@ public class View extends JFrame implements ActionListener, ItemListener,
    */
   public void getLineChart(DefaultCategoryDataset dataset) {
     JFreeChart chart = ChartFactory.createLineChart(
-            "Site Traffic", // Chart title
-            "Date", // X-Axis Label
-            "Number of Visitor", // Y-Axis Label
+            "Histograms", // Chart title
+            "Value", // X-Axis Label
+            "Frequency", // Y-Axis Label
             dataset
     );
     this.chart = chart;
