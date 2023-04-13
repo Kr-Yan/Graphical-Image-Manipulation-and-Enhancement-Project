@@ -314,9 +314,9 @@ JFreeChart chart;
 
   public void getLineChart(DefaultCategoryDataset dataset){
     JFreeChart chart = ChartFactory.createLineChart(
-            "Site Traffic", // Chart title
-          "Date", // X-Axis Label
-            "Number of Visitor", // Y-Axis Label
+            "Histogram", // Chart title
+          "Frequency", // X-Axis Label
+            "Value", // Y-Axis Label
            dataset
    );
      this.chart = chart;

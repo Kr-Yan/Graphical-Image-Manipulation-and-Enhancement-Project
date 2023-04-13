@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="I made getFileName Public now">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/ControlView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MvcRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MvcRead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +19,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,7 +48,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MvcRead">
+    <configuration name="MvcRead" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MvcRead" />
+      <module name="assignment6" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ImageUtil.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="assignment6" />
       <option name="PACKAGE_NAME" value="" />
@@ -59,6 +68,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MvcRead" />
         <item itemvalue="JUnit.ImageUtil.test" />
       </list>
     </recent_temporary>

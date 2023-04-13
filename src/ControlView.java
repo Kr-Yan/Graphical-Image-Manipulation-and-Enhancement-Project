@@ -190,6 +190,7 @@ public class ControlView implements ControlInt, ActionListener {
             return ".png";
           }
         });
+        fochooser.setAcceptAllFileFilterUsed(false);
 
         int restvalue = fochooser.showSaveDialog((Component) this.view);
         if (restvalue == JFileChooser.APPROVE_OPTION) {
