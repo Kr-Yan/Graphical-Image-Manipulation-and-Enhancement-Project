@@ -1,4 +1,4 @@
-# README/ Assignment5 GRIME: Graphical Image Manipulation and Enhancement (Part 3)
+# Assignment5 GRIME: Graphical Image Manipulation and Enhancement (Part 3)
 
 In this project, we are designing a view for your image processing application, featuring a graphical user interface. This will allow a user
 to interactively load, process and save images. use Java Swing to build the graphical user interface. The file saved an image as a PNG/PPM/JPG.
