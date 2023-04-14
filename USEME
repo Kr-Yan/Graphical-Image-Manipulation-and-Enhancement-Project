@@ -1,6 +1,28 @@
+#USEME
+
+##Description
 The project consists of UI and script-based command.
 
-For User Interface, the user can manipulate the imgae in following steps:
+###UI
+For User Interface, the user can manipulate the image in following steps:
 1. Run MVCRead.java
-2. once the window prompt up, following features will show up.
+2. once the window prompt up, user will be able to upload and save.
+3. following up, features will show up: flips, component visualization, greyscale, 
+blurring, sharpening and sepia.
+4. The user will be able to access to the file and save it as certain file type.
+5. Then the image will show up on the image plane.
+6. Users can manipulate images with features mentioned above.
+7. The frequency chart will shown below the image plane, and will update all time 
+automatically.
+
+###script-based command
+java -jar Program.jar -file path-of-script-file : when invoked in this manner the 
+program should open the script file, execute it and then shut down.
+
+java -jar Program.jar -text : when invoked in this manner the program should open in an 
+interactive text mode, allowing the user to type the script and execute it one line at a 
+time. This is how the program worked in the last assignment.
+
+java -jar Program.jar : when invoked in this manner the program should open the graphical 
+user interface. This is what will happen if you simply double-click on the jar file.
 
