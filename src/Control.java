@@ -222,6 +222,7 @@ public class Control extends ImageUtil implements ControlInt {
             fileName = commandArray[2];
             System.out.println(filePath + " is filepath of file");
             loadedPicArray = image.blur(fileName, loadedPicArray);
+            arrayStorage.put(fileName, loadedPicArray);
             if (image.getClass().equals(MockModel.class)) {
               this.out.append(Arrays.deepToString(loadedPicArray));
             }
@@ -232,6 +233,7 @@ public class Control extends ImageUtil implements ControlInt {
             fileName = commandArray[2];
             System.out.println(filePath + " is filepath of file");
             loadedPicArray = image.sharpen(fileName, loadedPicArray);
+            arrayStorage.put(fileName, loadedPicArray);
             if (image.getClass().equals(MockModel.class)) {
               this.out.append(Arrays.deepToString(loadedPicArray));
             }
@@ -243,6 +245,7 @@ public class Control extends ImageUtil implements ControlInt {
             fileName = commandArray[3];
             System.out.println(filePath + " is filepath of file");
             loadedPicArray = image.colorGrade(fileName, loadedPicArray, fileType);
+            arrayStorage.put(fileName, loadedPicArray);
             if (image.getClass().equals(MockModel.class)) {
               this.out.append(Arrays.deepToString(loadedPicArray));
             }

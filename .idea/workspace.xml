@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="Some minor tweaks and fixes, I think scripts should work fine">
-      <change afterPath="$PROJECT_DIR$/ditherScript.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="script works now at least for dithering">
+      <change beforePath="$PROJECT_DIR$/ditherScript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ditherScript.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/assignment6/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/Control.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681429505357</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="script works now at least for dithering">
+      <created>1681431725776</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681431725776</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +156,8 @@
     <MESSAGE value="I made getFileName Public now" />
     <MESSAGE value="Some minor tweaks and fixes" />
     <MESSAGE value="Some minor tweaks and fixes, I think scripts should work fine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some minor tweaks and fixes, I think scripts should work fine" />
+    <MESSAGE value="script works now at least for dithering" />
+    <option name="LAST_COMMIT_MESSAGE" value="script works now at least for dithering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -193,7 +199,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Control.java</url>
-          <line>255</line>
+          <line>258</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
