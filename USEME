@@ -1,9 +1,9 @@
-#USEME
+# USEME
 
-##Description
+## Description
 The project consists of UI and script-based command.
 
-###UI
+### UI
 For User Interface, the user can manipulate the image in following steps:
 1. Run MVCRead.java
 2. once the window prompt up, user will be able to upload and save.
@@ -15,7 +15,7 @@ blurring, sharpening and sepia.
 7. The frequency chart will shown below the image plane, and will update all time 
 automatically.
 
-###script-based command
+### script-based command
 java -jar Program.jar -file path-of-script-file : when invoked in this manner the 
 program should open the script file, execute it and then shut down.
 
