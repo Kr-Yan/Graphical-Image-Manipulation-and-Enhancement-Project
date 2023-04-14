@@ -1,8 +1,34 @@
 # assignment5 GRIME: Graphical Image Manipulation and Enhancement (Part 3)
 
 In this project, we are designing a view for your image processing application, featuring a graphical user interface. This will allow a user
-to interactively load, process and save images. use Java Swing to build the graphical user interface. 
-The file saved an image as a PNG/PPM/JPG.
+to interactively load, process and save images. use Java Swing to build the graphical user interface. The file saved an image as a PNG/PPM/JPG.
+
+### packages classes
+
+The application has four mian packages: Control, ImageUtil, GUItest and mockModel.
+Control is the Controller calss that receive inputs and store the outputs.
+ImageUtil is the model class that contains all the image manipulation and enhance methods.
+GUItest is the view class that contains the implementation for GUI.
+mockModel is a similar model as ImageUtil and it helps Controller testing.
+
+### interfaces
+
+The application has two interfaces: ControlInt and modelInterterface.
+ControlInt is implemented by Control class.
+modelInterface is implemented by ImageUtil and mockModel.
+
+### test classes
+
+The application has two test classes: controlTest and modelTest.
+controlTest tests the controller using the mockModel created.
+modelTest tests the methods implements in the model.
+
+## Using the file loader with a script
+
+In order to run a script, simply type in run followed by the name of the script and hit enter.
+For example, to run the provided script.txt, start the program and enter "run script.txt" into
+the console and then hit enter.
+
 
 ## Histogram
 The histogram of the visible image is visible as a line chart on the screen at all times. If the image is manipulated, the histogram 
