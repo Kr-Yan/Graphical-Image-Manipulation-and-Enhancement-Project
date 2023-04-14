@@ -1,0 +1,6 @@
+#temp command testing document
+load-other test.jpg loaded
+#testing new commands lmao make sure you dont mix greyscale for grayscale
+dithering loaded loaded
+#save loadTest-brighter
+save-file loaded png loaded

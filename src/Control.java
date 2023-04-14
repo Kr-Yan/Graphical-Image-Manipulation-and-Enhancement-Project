@@ -185,6 +185,7 @@ public class Control extends ImageUtil implements ControlInt {
             break;
 
           case "run":
+          case "-file":
             //run script-file
             fileName = commandArray[1];
             try {
@@ -193,6 +194,7 @@ public class Control extends ImageUtil implements ControlInt {
               e.printStackTrace();
             }
             break;
+
 
           case "load-other":
             fileName = commandArray[1];
@@ -250,7 +252,9 @@ public class Control extends ImageUtil implements ControlInt {
             filePath = commandArray[1];
             fileName = commandArray[2];
             System.out.println(filePath + " is filepath of file");
+            //fix later
             loadedPicArray = image.dithering(fileName, loadedPicArray);
+            arrayStorage.put(fileName, loadedPicArray);
             if (image.getClass().equals(MockModel.class)) {
               this.out.append(Arrays.deepToString(loadedPicArray));
             }

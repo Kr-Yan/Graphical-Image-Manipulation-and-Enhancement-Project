@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="Some minor tweaks and fixes">
+    <list default="true" id="ea1f6762-945e-4d35-bead-59f90b72750b" name="Changes" comment="Some minor tweaks and fixes, I think scripts should work fine">
+      <change afterPath="$PROJECT_DIR$/ditherScript.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/ImageUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment6/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/Control.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/MvcRead.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment6/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment6/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MvcRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MvcRead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681426469529</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Some minor tweaks and fixes, I think scripts should work fine">
+      <created>1681429448512</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681429448512</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Some minor tweaks and fixes, I think scripts should work fine">
+      <created>1681429505357</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681429505357</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +150,8 @@
     <MESSAGE value="this has all my changes now" />
     <MESSAGE value="I made getFileName Public now" />
     <MESSAGE value="Some minor tweaks and fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some minor tweaks and fixes" />
+    <MESSAGE value="Some minor tweaks and fixes, I think scripts should work fine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some minor tweaks and fixes, I think scripts should work fine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -147,6 +160,61 @@
           <url>file://$PROJECT_DIR$/src/View.java</url>
           <line>244</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>550</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>551</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>552</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>553</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>554</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>549</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Control.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>653</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>652</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>671</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageUtil.java</url>
+          <line>753</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
